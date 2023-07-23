@@ -22,13 +22,14 @@ import {
     CONFIG_UPDATE_FAIL
 } from '../constants/itemConstants'
 
+axios.defaults.baseURL = 'http://3.72.53.53:8000';
 
 //ITEM
 //getItemsByFilters
 export const getItemsByCategory = (idCategory) => async (dispatch) => {
     try {
         dispatch({ type: ITEM_LIST_REQUEST })
-        const { data } = await axios.get(`http://3.72.53.53:8000/api/item/?idCategory=${idCategory}`)
+        const { data } = await axios.get(`/api/item/?idCategory=${idCategory}`)
 
         dispatch({
             type: ITEM_LIST_SUCCESS,
@@ -76,7 +77,7 @@ export const getItemsBySearch = (params) => async (dispatch) => {
     try {
         dispatch({ type: ITEM_LIST_REQUEST })
         const { data } = await axios.get(
-            `http://3.72.53.53:8000/api/query/`,
+            `/api/query/`,
             { params: params }
         )        
 
@@ -99,7 +100,7 @@ export const getItemsBySearch = (params) => async (dispatch) => {
 export const getCategory = () => async (dispatch) => {
     try {
         dispatch({ type: CATEGORY_LIST_REQUEST })
-        const { data } = await axios.get(`http://3.72.53.53:8000/api/category/`)
+        const { data } = await axios.get(`/api/category/`)
       
         dispatch({
             type: CATEGORY_LIST_SUCCESS,
@@ -120,7 +121,7 @@ export const getCategory = () => async (dispatch) => {
 export const getConfiguration = () => async (dispatch) => {
     try {
         dispatch({ type: CONFIG_LIST_REQUEST })
-        const { data } = await axios.get(`http://3.72.53.53:8000/api/config/`)
+        const { data } = await axios.get(`/api/config/`)
 
       
         dispatch({
@@ -143,7 +144,7 @@ export const setConfiguration = (params) => async (dispatch) => {
     try {
         dispatch({ type: CONFIG_UPDATE_REQUEST })
         const { data } = await axios.post(
-            `http://3.72.53.53:8000/api/setConfig/`,
+            `/api/setConfig/`,
             params 
         )
 
