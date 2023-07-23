@@ -1,0 +1,64 @@
+/* c- means custom */
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #000000;
+  --orange-color: #000000;
+}
+
+#root{ 
+   background-color: var(--secondary-color);
+   font-family: 'Century Gothic';
+}
+
+.nav-item .dropdown-menu {
+  background: var(--primary-color);
+  border: none;
+}
+p{
+  white-space: pre-line;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main{
+  min-height: 80vh;
+}
+h3{
+  padding: 1rem 0;
+}
+.btn-primary{
+  background-color: var(--orange-color) !important;
+}
+.btn-primary:hover{
+  background-color: rgb(255, 170, 43) !important;
+}
+
+.btn-outline-primary{
+  background-color: var(--primary-color) !important;
+}
+
+
+/* Colors */
+.c-primary{
+  background-color: var(--primary-color) !important;
+}
+.c-secondary{
+  background-color: var(--secondary-color) !important;
+}
+.c-orange{
+  background-color: var(--orange-color) !important;
+}
+
+.c-black{
+  background-color: #000000;
+}
+.c-gray{
+  background-color: red;
+}
+.c-gray-2{
+  background-color: red;
+}
