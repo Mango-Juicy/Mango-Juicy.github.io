@@ -36,7 +36,7 @@ export const login = (username, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post(`/api/users/login`,
+        const { data } = await axios.post(`http://3.72.53.53:8000/api/users/login`,
             { 'username': username, 'password': password },
             config
         )
@@ -83,7 +83,7 @@ export const register = (user) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post(`/api/users/register/`,
+        const { data } = await axios.post(`http://3.72.53.53:8000/api/users/register/`,
             { 
                 'username': username, 
                 'password': password, 
@@ -128,7 +128,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(`/api/users/${id}/`,
+        const { data } = await axios.get(`http://3.72.53.53:8000/api/users/${id}/`,
             config
         )
 
@@ -164,7 +164,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.put(`/api/users/profile/update/`,
+        const { data } = await axios.put(`http://3.72.53.53:8000/api/users/profile/update/`,
             user,
             config
         )
